@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090507">
+<title>Ajjans Hub Key</title>
+
+<style>
+:root {
+  --red: #ff1738;
+  --red2: #ff5267;
+  --dark: #090507;
+  --white: #fff5f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background:
+    radial-gradient(ellipse at 50% 38%, #57101c 0%, transparent 36%),
+    radial-gradient(ellipse at 10% 90%, #26070d 0%, transparent 40%),
+    #090507;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    120deg,
+    transparent 0 100px,
+    #ff173808 101px 103px
+  );
+  animation: backgroundMove 18s linear infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 25%,
+    #0000008a 100%
+  );
+}
+
+@keyframes backgroundMove {
+  to { transform: translate(120px, -80px); }
+}
+
+.embers {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ember {
+  position: absolute;
+  left: var(--x);
+  bottom: -20px;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: #ff354e;
+  box-shadow: 0 0 8px #ff1738, 0 0 20px #ff173866;
+  animation: emberRise var(--duration) linear infinite;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+@keyframes emberRise {
+  0% {
+    transform: translate(0, 0) scale(.4);
+    opacity: 0;
+  }
+  15% { opacity: .9; }
+  75% { opacity: .6; }
+  100% {
+    transform: translate(var(--drift), -110vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 430px;
+  position: relative;
+  z-index: 2;
+  animation: pageEnter .9s cubic-bezier(.2,.8,.2,1) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  padding: 32px 26px 24px;
+  border-radius: 25px;
+  text-align: center;
+  background: linear-gradient(145deg, #1b1014f5, #0c080af7 70%);
+  border: 1px solid #ff344d55;
+  box-shadow:
+    0 0 60px #ff17381a,
+    0 25px 80px #00000066,
+    inset 0 1px #ffffff0b;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff5267, transparent);
+  animation: borderShine 4s ease-in-out infinite;
+}
+
+@keyframes borderShine {
+  0%, 15% { left: -70%; }
+  70%, 100% { left: 120%; }
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 10%,
+    #ff17380b,
+    transparent 50%
+  );
+}
+
+/* PREMIUM A LOGO */
+
+.logo-stage {
+  position: relative;
+  width: 174px;
+  height: 174px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.energy-halo {
+  position: absolute;
+  inset: 17px;
+  border-radius: 50%;
+  background: #ff1738;
+  filter: blur(34px);
+  opacity: .23;
+  animation: haloPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%, 100% {
+    transform: scale(.75);
+    opacity: .15;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: .45;
+  }
+}
+
+.orbit {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #ff344d70;
+  border-radius: 50%;
+  animation: orbitSpin 8s linear infinite;
+}
+
+.orbit::before,
+.orbit::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff5267;
+  box-shadow: 0 0 12px #ff1738, 0 0 25px #ff1738;
+}
+
+.orbit::before {
+  top: 18px;
+  left: 19px;
+}
+
+.orbit::after {
+  bottom: 20px;
+  right: 14px;
+  width: 5px;
+  height: 5px;
+}
+
+.orbit-two {
+  position: absolute;
+  inset: 0;
+  border: 1px dashed #ff526733;
+  border-radius: 50%;
+  animation: orbitReverse 16s linear infinite;
+}
+
+@keyframes orbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitReverse {
+  to { transform: rotate(-360deg); }
+}
+
+.logo-frame {
+  width: 112px;
+  height: 112px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 29px;
+  transform: rotate(-8deg);
+  background: linear-gradient(145deg, #ff6676, #c60027 45%, #42000c);
+  box-shadow:
+    0 0 0 1px #ff8a99,
+    0 0 0 5px #ff173815,
+    0 0 35px #ff173866,
+    0 0 75px #ff173822,
+    inset 0 2px 2px #ffffff55,
+    inset 0 -8px 18px #42000c88;
+  animation: frameFloat 3.2s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.logo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    transparent 25%,
+    #ffffff70 42%,
+    transparent 55%
+  );
+  transform: translateX(-150%);
+  animation: logoShine 3.5s ease-in-out infinite;
+}
+
+@keyframes logoShine {
+  0%, 20% { transform: translateX(-150%); }
+  70%, 100% { transform: translateX(150%); }
+}
+
+@keyframes frameFloat {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-7px) rotate(-4deg); }
+}
+
+.logo-frame svg {
+  width: 94px;
+  height: 94px;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  filter:
+    drop-shadow(0 3px 0 #670014)
+    drop-shadow(0 0 8px #ff9aa7);
+}
+
+.logo-aura {
+  position: absolute;
+  inset: 25px;
+  border-radius: 25px;
+  border: 1px solid #ff718355;
+  animation: auraPulse 2s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+  0%, 100% { transform: scale(.85); opacity: .3; }
+  50% { transform: scale(1.22); opacity: 1; }
+}
+
+.logo-caption {
+  color: #ff7d8c;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px #ff173855;
+}
+
+h1 {
+  font-size: clamp(29px, 8vw, 35px);
+  font-weight: 950;
+  letter-spacing: -1.4px;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 18px #ff173815;
+}
+
+h1 span {
+  color: #ff354e;
+  text-shadow: 0 0 22px #ff173855;
+}
+
+.subtitle {
+  color: #a99ba0;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  font-size: 10px;
+  letter-spacing: .8px;
+  color: #ff9aa7;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #ff354e;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff1738;
+  animation: blink 1.3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% { opacity: .3; transform: scale(.8); }
+}
+
+.label {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  color: #cbbdc1;
+}
+
+.key-box {
+  position: relative;
+  padding: 15px 13px;
+  margin-bottom: 16px;
+  border: 1px solid #ff344d45;
+  border-radius: 12px;
+  background: #080607;
+  color: #ffe8eb;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  user-select: all;
+  transition: border-color .3s, box-shadow .3s;
+}
+
+.key-box:hover {
+  border-color: #ff5267;
+  box-shadow: 0 0 22px #ff17381e;
+}
+
+.copy-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  padding: 16px 14px;
+  border: 1px solid #ff7484;
+  border-radius: 12px;
+  background: linear-gradient(105deg, #ff354e, #db002b 55%, #a50021);
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 25px #ff173833,
+    inset 0 1px #ffffff44;
+  transition: transform .25s, box-shadow .25s, filter .25s;
+}
+
+.copy-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    #ffffff48 48%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  animation: buttonShine 4s ease-in-out infinite;
+}
+
+@keyframes buttonShine {
+  0%, 25% { transform: translateX(-130%); }
+  70%, 100% { transform: translateX(130%); }
+}
+
+.copy-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow:
+    0 10px 35px #ff173855,
+    inset 0 1px #ffffff66;
+}
+
+.copy-btn:active {
+  transform: scale(.975);
+}
+
+#message {
+  min-height: 18px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #ff8796;
+}
+
+.footer {
+  margin-top: 19px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff0d;
+  color: #76656a;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 380px) {
+  .card { padding: 28px 19px 22px; }
+  .logo-stage { transform: scale(.92); margin-bottom: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="embers" id="embers"></div>
+
+<main class="wrapper">
+  <section class="card">
+
+    <div class="logo-stage">
+      <div class="energy-halo"></div>
+      <div class="orbit"></div>
+      <div class="orbit-two"></div>
+      <div class="logo-aura"></div>
+
+      <div class="logo-frame">
+        <svg viewBox="0 0 100 100"
+             role="img" aria-label="Ajjans Hub stylized A logo">
+          <defs>
+            <linearGradient id="metal" x1="0" y1="0" x2=".9" y2="1">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="22%" stop-color="#ffdce1"/>
+              <stop offset="42%" stop-color="#ffffff"/>
+              <stop offset="65%" stop-color="#ff8998"/>
+              <stop offset="100%" stop-color="#ffc5cc"/>
+            </linearGradient>
+            <linearGradient id="shadowMetal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff9aa7"/>
+              <stop offset="100%" stop-color="#8e001c"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Bóng kim loại tạo chiều sâu -->
+          <path d="M50 7 L94 88 L72 88 L50 48 L28 88 L6 88 Z"
+                fill="#680015" transform="translate(0 4)"/>
+
+          <!-- Thân chữ A sắc cạnh -->
+          <path d="M50 6 L94 87 L72 87 L50 47 L28 87 L6 87 Z"
+                fill="url(#metal)"
+                stroke="#fff0f2"
+                stroke-width="1.1"
+                stroke-linejoin="round"/>
+
+          <!-- Lõi tối tạo khối -->
+          <path d="M50 25 L39 56 L48 56 L50 51 L53 56 L62 56 Z"
+                fill="url(#shadowMetal)"/>
+
+          <!-- Thanh ngang cách điệu -->
+          <path d="M31 66 L69 66 L76 79 L24 79 Z"
+                fill="#a90022"
+                stroke="#ffabb5"
+                stroke-width=".8"/>
+
+          <path d="M35 69 L65 69 L68 74 L32 74 Z"
+                fill="#ff5267"/>
+
+          <!-- Đường cắt năng lượng -->
+          <path d="M50 7 L59 24 L50 21 L41 24 Z"
+                fill="#ff263f"/>
+
+          <!-- Highlight kim loại -->
+          <path d="M50 12 L16 79 L25 79 L50 31 Z"
+                fill="#ffffff" opacity=".22"/>
+
+          <!-- Điểm sáng -->
+          <path d="M79 48 L83 54 L79 60 L75 54 Z"
+                fill="#ffffff"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="logo-caption">RED CORE EDITION</div>
+
+    <h1>Ajjans <span>Hub</span></h1>
+    <p class="subtitle">PREMIUM KEY SYSTEM</p>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>YOUR ACCESS KEY IS READY</span>
+    </div>
+
+    <label class="label" for="key">YOUR ACCESS KEY</label>
+
+    <div class="key-box" id="key">
+      AjjansHubKeyKalwowob - KalwpwiLalqowjPquwhsbi
+    </div>
+
+    <button class="copy-btn" id="copyBtn" type="button">
+      <span>COPY KEY &nbsp; ↗</span>
+    </button>
+
+    <p id="message" aria-live="polite"></p>
+
+    <div class="footer">AJJANS HUB &nbsp; • &nbsp; KEY CENTER</div>
+  </section>
+</main>
+
+<script>
+const emberContainer = document.getElementById("embers");
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!reducedMotion) {
+  for (let i = 0; i < 38; i++) {
+    const ember = document.createElement("span");
+    ember.className = "ember";
+
+    ember.style.setProperty("--x", Math.random() * 100 + "%");
+    ember.style.setProperty("--s", (2 + Math.random() * 4) + "px");
+    ember.style.setProperty("--duration", (6 + Math.random() * 10) + "s");
+    ember.style.setProperty("--delay", (-Math.random() * 15) + "s");
+    ember.style.setProperty("--drift", (-55 + Math.random() * 110) + "px");
+
+    emberContainer.appendChild(ember);
+  }
+}
+
+const button = document.getElementById("copyBtn");
+const message = document.getElementById("message");
+
+button.addEventListener("click", async () => {
+  const key = document.getElementById("key").textContent.trim();
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(key);
+    } else {
+      const area = document.createElement("textarea");
+      area.value = key;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+
+      const copied = document.execCommand("copy");
+      area.remove();
+
+      if (!copied) throw new Error("Copy failed");
+    }
+
+    button.querySelector("span").textContent = "✓ KEY COPIED";
+    message.textContent = "Key copied successfully!";
+
+    setTimeout(() => {
+      button.querySelector("span").textContent = "COPY KEY  ↗";
+      message.textContent = "";
+    }, 2200);
+
+  } catch (error) {
+    message.textContent = "Select the key above and copy it manually.";
+  }
+});
+</script>
+</body>
+</html>
